@@ -21,6 +21,8 @@ module.exports = {
     rules: {
         camelcase: 0,
         "one-var": 0,
-        "sort-keys": 0
+        "sort-keys": 0,
+        "no-magic-numbers": 0,
+        "prefer-named-capture-group": 0
     }
 };

@@ -3,14 +3,16 @@ interface QnoteToken {
     raw: string;
     text: string;
     class: string;
-    tokens: Array<unknown>;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    tokens: Array<any>;
 }
 
 interface Qnote {
     name: string;
     level: "block" | "inline";
 
-    start: (src: string) => number | undefined;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    start: (src: string) => any;
     tokenizer: (src: string) => QnoteToken | void;
     renderer: (token: QnoteToken) => string;
 
@@ -19,7 +21,7 @@ interface Qnote {
     };
 
     parser: {
-        parse: (tokens: Array<unknown>) => string;
+        parse: (tokens: QnoteToken["tokens"]) => string;
     };
 }
 
@@ -63,12 +65,10 @@ const qnote: Qnote = {
     name: "qnote",
     level: "block",
     start(src: string) {
-        // eslint-disable-next-line prefer-named-capture-group
         return src.match(/^:::note (info|warn|alert)\n/u)?.index;
     },
     // eslint-disable-next-line consistent-return
     tokenizer(src: string) {
-        // eslint-disable-next-line prefer-named-capture-group
         const rule = /^:::note (info|warn|alert)\n([\s\S]*?)\n:::/u;
         const match = rule.exec(src);
         if (match) {
