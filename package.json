@@ -1,0 +1,28 @@
+{
+  "name": "qnote",
+  "version": "1.0.0",
+  "description": "Parser for Qiita note notation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Robot-Inventor/qnote.git"
+  },
+  "keywords": [
+    "qiita",
+    "markdown",
+    "parser",
+    "note",
+    "notation",
+    "codeblock",
+    "container"
+  ],
+  "author": "Robot-Inventor",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Robot-Inventor/qnote/issues"
+  },
+  "homepage": "https://github.com/Robot-Inventor/qnote#readme"
+}
